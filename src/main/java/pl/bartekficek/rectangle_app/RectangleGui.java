@@ -21,7 +21,7 @@ public class RectangleGui extends VerticalLayout {
         textFieldHeight = new TextField("Write height");
         textFieldWidth = new TextField("Write width");
         button = new Button("Add!");
-        button.addClickListener(event -> )
+        button.addClickListener(event -> addRectangle());
 
         add(textFieldHeight);
         add(textFieldWidth);
