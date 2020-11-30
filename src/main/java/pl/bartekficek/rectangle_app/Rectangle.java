@@ -16,8 +16,8 @@ public class Rectangle {
     private int width;
 
     public Rectangle() {
-    }
 
+    }
     public Rectangle(int height, int width) {
         this.height = height;
         this.width = width;

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FigureAPI {
 
     @GetMapping("/calculate")
-    public int calculate(@RequestParam String figure, @RequestParam int sideA, @RequestParam int sideB, @RequestParam int sideC) {
+    public int calculate(@RequestParam String figure, @RequestParam int sideA, @RequestParam int sideB, @RequestParam(required = false) Integer sideC) {
         if (figure.equalsIgnoreCase("TRIANGLE")) {
             return sideA + sideB + sideC;
         } else if (figure.equalsIgnoreCase("RECTANGLE")) {
