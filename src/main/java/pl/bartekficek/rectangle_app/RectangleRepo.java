@@ -9,11 +9,11 @@ import java.util.List;
 @Repository
 public interface RectangleRepo extends CrudRepository<Rectangle, Long> {
 
-    String PERIMETER = "2 * rect.height + rect.width";
+    String PERIMETER = "2 * rect.height + 2 * rect.width";
 
-    @Query(nativeQuery = true, value = "SELECT * FROM RECTANGLE rect WHERE (" + PERIMETER + ") >= 20")
+    @Query(nativeQuery = true, value = "SELECT * FROM RECTANGLE rect WHERE (" + PERIMETER + ">= 20)")
     List<Rectangle> getBigRectangles();
 
-    @Query(nativeQuery = true, value = "SELECT * FROM RECTANGLE rect WHERE (" + PERIMETER + ") < 20")
+    @Query(nativeQuery = true, value = "SELECT * FROM RECTANGLE rect WHERE " + PERIMETER + " < 20")
     List<Rectangle> getSmallRectangles();
 }
